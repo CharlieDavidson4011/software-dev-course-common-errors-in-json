@@ -47,24 +47,24 @@ but it contains multiple syntax errors that prevent it from being parsed.
 const invalidBookingJSON = `
 {
   "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
+  "checkInDate": "2024-05-15",
   "checkOutDate": "2024-05-20",
   "guests": [
     {
-      name: "Alice Johnson",
+      "name": "Alice Johnson",
       "age": 30,
       "email": "alice.johnson@example.com"
     },
     {
       "name": "Bob Smith",
-      "age": undefined,
+      "age": 54,
       "email": "bob.smith@example"
     }
   ],
   "roomDetails": {
     "type": "Suite",
     "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
+    "amenities": ["WiFi", "Breakfast", "Parking"]
   }
 }
 `;
@@ -80,6 +80,10 @@ const invalidBookingJSON = `
   • What was wrong?
   • Why is it a problem in JSON?
   • What did you change to fix it?
+  1. Comma missing between properties - line 50
+  2.Incorrect quotations - line 54
+  3. Age, cannot be undefined - line 60
+  4. Unneseccary comma - line 67
 */
 
 
@@ -91,11 +95,14 @@ const invalidBookingJSON = `
 💬 Reflect and answer the following:
 
 1️⃣ What tools or techniques did you use to identify the errors?
+The tool I used was JSONLint
 
 2️⃣ How did you confirm that your corrected JSON file was valid?
+I confirmed that the corrected JSON file was valid with JSONLint
 
 3️⃣ Which errors were the most difficult to spot? Why?
-
+The error that was the most difficult to spot was the comma after "Parking" in the array, I just kept missing it. 
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
+The strategy that I would like to rely on most is peer review and taking more time with JSONLint.
    (e.g., syntax highlighting, linters, writing JSON by example)
 */
